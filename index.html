@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon Portfolio</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
     <style>
         body, html {
             margin: 0;
@@ -15,24 +16,50 @@
             background-color: #f9f9f9;
         }
 
-        .pdf-container {
-            width: 100%;
-            height: 100vh;
-        }
-
-        embed {
-            width: 100%;
-            height: 100%;
-            border: none; /* Enlever la bordure autour du PDF */
+        #pdf-canvas {
+            max-width: 100%;
+            max-height: 100vh;
+            border: none; /* Supprimer les bordures */
         }
     </style>
 </head>
 <body>
 
-    <div class="pdf-container">
-        <!-- Intégration du PDF sans interface visible -->
-        <embed src="portfolio.pdf" type="application/pdf" />
-    </div>
+    <!-- Canvas pour afficher le PDF -->
+    <canvas id="pdf-canvas"></canvas>
+
+    <script>
+        const url = 'portfolio.pdf'; // Remplace par le chemin de ton PDF
+
+        const canvas = document.getElementById('pdf-canvas');
+        const ctx = canvas.getContext('2d');
+
+        // Fonction pour afficher le PDF sans l'interface PDF
+        function renderPDF() {
+            pdfjsLib.getDocument(url).promise.then(function (pdf) {
+                pdf.getPage(1).then(function (page) {
+                    const scale = Math.min(window.innerWidth / page.getViewport({ scale: 1 }).width, window.innerHeight / page.getViewport({ scale: 1 }).height);
+                    const viewport = page.getViewport({ scale: scale });
+
+                    canvas.width = viewport.width;
+                    canvas.height = viewport.height;
+
+                    page.render({
+                        canvasContext: ctx,
+                        viewport: viewport
+                    });
+                });
+            });
+        }
+
+        // Redimensionner le PDF lors du redimensionnement de la fenêtre
+        window.onresize = function() {
+            renderPDF();
+        };
+
+        // Affichage initial du PDF
+        renderPDF();
+    </script>
 
 </body>
 </html>
