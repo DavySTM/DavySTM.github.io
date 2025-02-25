@@ -1,3 +1,0 @@
-# DavySTM.github.io
-
-B
