@@ -1,0 +1,715 @@
+* {
+    box-sizing: border-box;
+}
+
+
+:root {
+    --green-dark: #06291f;
+    --green: #0c513c;
+    --red: #b32638;
+    --red-dark: #721522;
+    --gold: #ffd166;
+    --cream: #fff8e7;
+}
+
+
+html {
+    min-height: 100%;
+}
+
+
+body {
+    margin: 0;
+
+    min-height: 100vh;
+
+    font-family: 'Poppins', sans-serif;
+
+    color: white;
+
+    overflow-x: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(255, 209, 102, 0.12),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #082e24 0%,
+            #041b15 45%,
+            #25070c 100%
+        );
+}
+
+
+/* =========================================
+   PAGE
+========================================= */
+
+.page {
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 90px 15px 35px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.card {
+    width: min(100%, 560px);
+
+    position: relative;
+
+    padding: 42px 35px 32px;
+
+    text-align: center;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.13),
+            rgba(255,255,255,0.045)
+        );
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    backdrop-filter: blur(18px);
+
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,0.5),
+        inset 0 1px 0 rgba(255,255,255,0.18);
+
+    animation: cardAppear 1s ease-out;
+}
+
+
+@keyframes cardAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* =========================================
+   TOP DECORATION
+========================================= */
+
+.top-decoration {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 20px;
+
+    color: var(--gold);
+
+    font-size: 18px;
+
+    margin-bottom: 8px;
+}
+
+
+.top-decoration span:nth-child(2) {
+    font-size: 32px;
+
+    animation: treeFloat 3s ease-in-out infinite;
+}
+
+
+@keyframes treeFloat {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+
+/* =========================================
+   SANTA
+========================================= */
+
+.santa-icon {
+    font-size: 70px;
+
+    filter:
+        drop-shadow(0 8px 10px rgba(0,0,0,0.35));
+
+    animation: santaFloat 3s ease-in-out infinite;
+}
+
+
+@keyframes santaFloat {
+
+    0%, 100% {
+        transform: translateY(0) rotate(-2deg);
+    }
+
+    50% {
+        transform: translateY(-8px) rotate(2deg);
+    }
+}
+
+
+/* =========================================
+   TITRE
+========================================= */
+
+h1 {
+    margin: 0;
+
+    font-family: 'Mountains of Christmas', cursive;
+
+    font-size: clamp(48px, 12vw, 72px);
+
+    line-height: 1;
+
+    color: white;
+
+    text-shadow:
+        0 3px 0 var(--red),
+        0 7px 20px rgba(0,0,0,0.4);
+}
+
+
+.intro {
+    margin: 15px 0 32px;
+
+    color: rgba(255,255,255,0.8);
+
+    line-height: 1.7;
+
+    font-size: 15px;
+}
+
+
+/* =========================================
+   PAGE D'ACCUEIL
+========================================= */
+
+.locked-box {
+    padding: 28px 22px;
+
+    border-radius: 20px;
+
+    background: rgba(0,0,0,0.16);
+
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+
+.lock-icon {
+    font-size: 38px;
+
+    margin-bottom: 10px;
+}
+
+
+.locked-box h2 {
+    margin: 0 0 10px;
+
+    font-family: 'Mountains of Christmas', cursive;
+
+    font-size: 29px;
+}
+
+
+.locked-box p {
+    margin: 0;
+
+    color: rgba(255,255,255,0.7);
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   BOUTON
+========================================= */
+
+.reveal-button {
+    margin-top: 25px;
+
+    border: none;
+
+    padding: 16px 28px;
+
+    border-radius: 999px;
+
+    color: white;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    background:
+        linear-gradient(
+            135deg,
+            #c52d40,
+            #8e1828
+        );
+
+    box-shadow:
+        0 8px 25px rgba(179,38,56,0.35);
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+
+
+.reveal-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(179,38,56,0.5);
+}
+
+
+.reveal-button:active {
+    transform: scale(0.96);
+}
+
+
+/* =========================================
+   REVELATION
+========================================= */
+
+.reveal {
+    animation: revealContent 1s ease forwards;
+}
+
+
+@keyframes revealContent {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(25px)
+            scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+.secret-label {
+    margin-top: 15px;
+
+    font-size: 13px;
+
+    color: rgba(255,255,255,0.65);
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+}
+
+
+.recipient {
+    margin: 3px 0 25px;
+
+    font-family: 'Mountains of Christmas', cursive;
+
+    font-size: clamp(45px, 12vw, 62px);
+
+    color: var(--gold);
+
+    text-shadow:
+        0 3px 15px rgba(0,0,0,0.3);
+}
+
+
+/* =========================================
+   PHOTO
+========================================= */
+
+.photo-container {
+    margin: 20px auto 25px;
+
+    position: relative;
+
+    width: 220px;
+
+    height: 220px;
+}
+
+
+.photo {
+    width: 220px;
+    height: 220px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 5px solid rgba(255,255,255,0.85);
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,0.4);
+
+    animation: photoAppear 1s ease 0.3s both;
+}
+
+
+@keyframes photoAppear {
+
+    from {
+        opacity: 0;
+
+        transform: scale(0.7) rotate(-5deg);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: scale(1) rotate(0);
+    }
+}
+
+
+.photo-placeholder {
+    width: 220px;
+    height: 220px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    border: 3px dashed rgba(255,255,255,0.4);
+
+    background: rgba(255,255,255,0.07);
+
+    font-size: 65px;
+}
+
+
+/* =========================================
+   WISHLIST
+========================================= */
+
+.wishlist {
+    margin-top: 30px;
+
+    padding: 25px;
+
+    text-align: left;
+
+    border-radius: 22px;
+
+    background:
+        rgba(0,0,0,0.17);
+
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+
+.wishlist-title {
+    margin: 0 0 18px;
+
+    text-align: center;
+
+    font-family: 'Mountains of Christmas', cursive;
+
+    font-size: 31px;
+
+    color: var(--gold);
+}
+
+
+.wishlist ul {
+    margin: 0;
+
+    padding: 0;
+
+    list-style: none;
+}
+
+
+.wishlist li {
+    margin: 10px 0;
+
+    padding: 12px 15px;
+
+    border-radius: 12px;
+
+    background: rgba(255,255,255,0.06);
+
+    color: rgba(255,255,255,0.9);
+}
+
+
+.empty-list {
+    margin: 0;
+
+    text-align: center;
+
+    color: rgba(255,255,255,0.6);
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   MESSAGE D'ERREUR
+========================================= */
+
+.warning {
+    padding: 25px;
+
+    border-radius: 18px;
+
+    background: rgba(0,0,0,0.18);
+
+    color: rgba(255,255,255,0.8);
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   GUIRLANDE
+========================================= */
+
+.garland {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 70px;
+
+    display: flex;
+
+    justify-content: space-around;
+
+    align-items: flex-start;
+
+    padding: 13px 5% 0;
+
+    z-index: 10;
+
+    pointer-events: none;
+
+    border-top: 3px solid #172c25;
+}
+
+
+.garland span {
+    width: 13px;
+    height: 18px;
+
+    border-radius: 50%;
+
+    background: #ff3b3b;
+
+    box-shadow:
+        0 0 12px currentColor;
+
+    animation: lightBlink 1.5s infinite alternate;
+}
+
+
+.garland span:nth-child(2n) {
+    background: #ffd166;
+
+    animation-delay: 0.4s;
+}
+
+
+.garland span:nth-child(3n) {
+    background: #54e0a1;
+
+    animation-delay: 0.8s;
+}
+
+
+@keyframes lightBlink {
+
+    from {
+        opacity: 0.45;
+
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: scale(1.1);
+    }
+}
+
+
+/* =========================================
+   NEIGE
+========================================= */
+
+.snowflake {
+    position: fixed;
+
+    top: -20px;
+
+    color: white;
+
+    pointer-events: none;
+
+    user-select: none;
+
+    z-index: 1;
+
+    animation:
+        snowFall linear forwards;
+}
+
+
+@keyframes snowFall {
+
+    to {
+        transform:
+            translateY(110vh)
+            rotate(360deg);
+    }
+}
+
+
+/* =========================================
+   CONFETTIS
+========================================= */
+
+.confetti-piece {
+    position: fixed;
+
+    top: -20px;
+
+    width: 9px;
+    height: 14px;
+
+    z-index: 20;
+
+    pointer-events: none;
+
+    animation: confettiFall 2.8s ease-out forwards;
+}
+
+
+@keyframes confettiFall {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    margin-top: 20px;
+
+    font-size: 12px;
+
+    color: rgba(255,255,255,0.45);
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 500px) {
+
+    .page {
+        padding: 85px 12px 25px;
+    }
+
+
+    .card {
+        padding: 35px 18px 28px;
+
+        border-radius: 24px;
+    }
+
+
+    .santa-icon {
+        font-size: 60px;
+    }
+
+
+    .photo-container,
+    .photo,
+    .photo-placeholder {
+        width: 185px;
+        height: 185px;
+    }
+
+
+    .wishlist {
+        padding: 20px 15px;
+    }
+}
