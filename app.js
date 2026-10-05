@@ -3,11 +3,12 @@
 SECRET SANTA
 ====================================================
 
-Chaque code donne accès à UNE seule personne.
+Les codes sont personnels.
 
-IMPORTANT :
-Les codes sont volontairement aléatoires.
-Ne les publie pas dans une liste accessible aux participants.
+La page d'accueil demande le code.
+Si le code est correct, on affiche directement
+la page personnelle correspondante.
+
 ====================================================
 */
 
@@ -21,14 +22,12 @@ const participants = {
         wishlist: []
     },
 
-
     "P4M8QA": {
         santa: "Marine",
         recipient: "Tonton",
         photo: "images/tonton.jpg",
         wishlist: []
     },
-
 
     "Z91L3C": {
         santa: "Morgan",
@@ -37,14 +36,12 @@ const participants = {
         wishlist: []
     },
 
-
     "R6T2KP": {
         santa: "Megane",
         recipient: "Marine",
         photo: "images/marine.jpg",
         wishlist: []
     },
-
 
     "V8Q5HD": {
         santa: "Nathan",
@@ -53,7 +50,6 @@ const participants = {
         wishlist: []
     },
 
-
     "B3N7WF": {
         santa: "Suzanne",
         recipient: "Isabelle",
@@ -61,14 +57,12 @@ const participants = {
         wishlist: []
     },
 
-
     "X5C9RM": {
         santa: "Tata",
         recipient: "Nathan",
         photo: "images/nathan.jpg",
         wishlist: []
     },
-
 
     "L2A8JQ": {
         santa: "Tonton",
@@ -81,131 +75,91 @@ const participants = {
 
 
 /* =========================================
-   CODE DANS L'URL
+   FORMULAIRE DU CODE
 ========================================= */
 
-function getCode() {
-
-    const params =
-        new URLSearchParams(window.location.search);
-
-    return params.get("code");
-}
+const form =
+    document.getElementById("codeForm");
 
 
-/* =========================================
-   PAGE D'ACCUEIL
-========================================= */
-
-function showLockedPage() {
-
-    const content =
-        document.getElementById("content");
+const input =
+    document.getElementById("secretCode");
 
 
-    content.innerHTML = `
-
-        <div class="locked-box">
-
-            <div class="lock-icon">
-                🔐
-            </div>
-
-            <h2>
-                Une surprise t'attend
-            </h2>
-
-            <p>
-                Cette page est personnelle.<br>
-                Utilise le lien Secret Santa
-                qui t'a été envoyé.
-            </p>
-
-        </div>
-
-    `;
-}
+const error =
+    document.getElementById("error");
 
 
-/* =========================================
-   CODE INVALIDE
-========================================= */
+form.addEventListener("submit", function(event) {
 
-function showError() {
-
-    const content =
-        document.getElementById("content");
+    event.preventDefault();
 
 
-    content.innerHTML = `
+    /*
+     * On transforme automatiquement
+     * le code en majuscules.
+     */
 
-        <div class="warning">
-
-            🎄
-
-            <br><br>
-
-            Oups ! Ce lien Secret Santa
-            n'est pas valide.
-
-            <br><br>
-
-            Vérifie le lien qui t'a été envoyé.
-
-        </div>
-
-    `;
-}
+    const code =
+        input.value
+            .trim()
+            .toUpperCase();
 
 
-/* =========================================
-   LISTE DE CADEAUX
-========================================= */
+    /*
+     * Code incorrect
+     */
 
-function createWishlist(wishlist) {
+    if (!participants[code]) {
 
-    if (!wishlist || wishlist.length === 0) {
+        error.textContent =
+            "❌ Ce code n'est pas valide. Vérifie ton code et réessaie.";
 
-        return `
+        input.classList.add("input-error");
 
-            <p class="empty-list">
+        setTimeout(() => {
+            input.classList.remove("input-error");
+        }, 500);
 
-                🎁 La liste de souhaits
-                sera bientôt disponible...
-
-                <br><br>
-
-                Revenez voir cette page
-                un peu plus tard !
-
-            </p>
-
-        `;
-
+        return;
     }
 
 
-    return `
+    /*
+     * Code correct
+     */
 
-        <ul>
+    error.textContent = "";
 
-            ${wishlist.map(item => `
-                <li>
-                    🎁 ${item}
-                </li>
-            `).join("")}
 
-        </ul>
+    /*
+     * On enregistre temporairement
+     * le code dans la session du navigateur.
+     */
 
-    `;
-}
+    sessionStorage.setItem(
+        "secretSantaCode",
+        code
+    );
+
+
+    /*
+     * On affiche directement
+     * la page personnelle.
+     */
+
+    showPersonalPage(
+        participants[code]
+    );
+
+});
 
 
 /* =========================================
-   REVELATION
+   PAGE PERSONNELLE
 ========================================= */
 
-function revealParticipant(participant) {
+function showPersonalPage(participant) {
 
     const content =
         document.getElementById("content");
@@ -216,7 +170,7 @@ function revealParticipant(participant) {
         <div class="reveal">
 
             <div class="secret-label">
-                Ton Secret Santa est...
+                🎄 Ton Secret Santa est...
             </div>
 
 
@@ -238,7 +192,6 @@ function revealParticipant(participant) {
                     "
                 >
 
-
                 <div
                     class="photo-placeholder"
                     style="display:none;"
@@ -255,52 +208,18 @@ function revealParticipant(participant) {
                     🎁 Sa liste de souhaits
                 </h2>
 
-                ${createWishlist(participant.wishlist)}
+                ${createWishlist(
+                    participant.wishlist
+                )}
 
             </div>
-
-        </div>
-
-    `;
-
-
-    createConfetti();
-}
-
-
-/* =========================================
-   BOUTON REVELATION
-========================================= */
-
-function showRevealButton(participant) {
-
-    const content =
-        document.getElementById("content");
-
-
-    content.innerHTML = `
-
-        <div class="locked-box">
-
-            <div class="lock-icon">
-                🎁
-            </div>
-
-            <h2>
-                Ton cadeau de Noël
-            </h2>
-
-            <p>
-                Quelqu'un a été choisi spécialement
-                pour toi...
-            </p>
 
 
             <button
                 class="reveal-button"
-                id="revealButton"
+                onclick="logout()"
             >
-                🎅 Découvrir mon Secret Santa
+                🔒 Quitter ma page
             </button>
 
         </div>
@@ -308,13 +227,69 @@ function showRevealButton(participant) {
     `;
 
 
-    document
-        .getElementById("revealButton")
-        .addEventListener("click", () => {
+    createConfetti();
 
-            revealParticipant(participant);
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
 
-        });
+
+/* =========================================
+   LISTE DE SOUHAITS
+========================================= */
+
+function createWishlist(wishlist) {
+
+    if (!wishlist || wishlist.length === 0) {
+
+        return `
+
+            <p class="empty-list">
+
+                🎁 La liste de souhaits
+                sera bientôt disponible...
+
+                <br><br>
+
+                Reviens voir cette page
+                un peu plus tard !
+
+            </p>
+
+        `;
+    }
+
+
+    return `
+
+        <ul>
+
+            ${wishlist.map(item => `
+                <li>
+                    🎁 ${item}
+                </li>
+            `).join("")}
+
+        </ul>
+
+    `;
+}
+
+
+/* =========================================
+   QUITTER LA PAGE
+========================================= */
+
+function logout() {
+
+    sessionStorage.removeItem(
+        "secretSantaCode"
+    );
+
+
+    location.reload();
 }
 
 
@@ -325,6 +300,28 @@ function showRevealButton(participant) {
 function createConfetti() {
 
     const container =
+        document.getElementById("confetti");
+
+
+    /*
+     * Si le conteneur n'existe pas encore,
+     * on le crée.
+     */
+
+    if (!container) {
+
+        const newContainer =
+            document.createElement("div");
+
+        newContainer.id = "confetti";
+
+        document.body.appendChild(
+            newContainer
+        );
+    }
+
+
+    const confettiContainer =
         document.getElementById("confetti");
 
 
@@ -363,11 +360,9 @@ function createConfetti() {
             Math.random() * 0.5 + "s";
 
 
-        piece.style.transform =
-            `rotate(${Math.random() * 360}deg)`;
-
-
-        container.appendChild(piece);
+        confettiContainer.appendChild(
+            piece
+        );
 
 
         setTimeout(() => {
@@ -375,7 +370,6 @@ function createConfetti() {
             piece.remove();
 
         }, 3500);
-
     }
 }
 
@@ -418,12 +412,8 @@ function createSnowflake() {
         Math.random() * 100 + "vw";
 
 
-    const size =
-        Math.random() * 12 + 8;
-
-
     flake.style.fontSize =
-        size + "px";
+        Math.random() * 12 + 8 + "px";
 
 
     const duration =
@@ -446,62 +436,10 @@ function createSnowflake() {
         flake.remove();
 
     }, duration * 1000);
-
 }
 
 
-/*
- * Une nouvelle neige toutes les 180 ms
- */
-
-setInterval(createSnowflake, 180);
-
-
-/* =========================================
-   INITIALISATION
-========================================= */
-
-function init() {
-
-    const code = getCode();
-
-
-    /*
-     * Pas de code :
-     * page totalement neutre.
-     */
-
-    if (!code) {
-
-        showLockedPage();
-
-        return;
-    }
-
-
-    /*
-     * Mauvais code
-     */
-
-    const participant =
-        participants[code];
-
-
-    if (!participant) {
-
-        showError();
-
-        return;
-    }
-
-
-    /*
-     * Code valide :
-     * on affiche d'abord le bouton.
-     */
-
-    showRevealButton(participant);
-}
-
-
-init();
+setInterval(
+    createSnowflake,
+    180
+);
