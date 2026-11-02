@@ -37,21 +37,43 @@ const participants = {
         santa: "Morgan",
         recipient: "Suzanne",
         photo: "images/suzanne.jpg",
-        wishlist: []
+        wishlist: [
+            "Carte cadeau surprise malo<br><small style='opacity:0.6'>Du petit commerce, on ADOOOREEE</small>",
+            "Livre beauté fatale de Mona Chollet<br><small style='opacity:0.6'>Il faut souffrir pour être belle</small>",
+            "Fixateur maquillage One Size On Til Dawn<br><small style='opacity:0.6'>Mais encore ?</small>",
+            "Poudre Laura Mercier couleur Translucent <br><small style='opacity:0.6'>Ah quand même</small>",
+            "Carte cadeau Sephora<br><small style='opacity:0.6'>Simple mais efficace</small>",
+            "Masque Olaplex 4 en 1<br><small style='opacity:0.6'>C'est de la torture non ? Bon courage</small>",
+            "Echarpe & Gant qui vont ensemble<br><small style='opacity:0.6'>Truc drôle accepter tant que c'est raccord/small>",
+            "Masque Kerasta Genesis <br><small style='opacity:0.6'>C'est fini après promis Morgan</small>"
+        ]
     },
 
     "R6T2KP": {
         santa: "Megane",
         recipient: "Marine",
         photo: "images/marine.jpg",
-        wishlist: []
+        wishlist: [
+            "La green card ou un mec riche americain <br><small style='opacity:0.6'>Qui vit à Orlando</small>",
+            
+            
+        ]
     },
 
     "V8Q5HD": {
         santa: "Nathan",
         recipient: "Megane",
         photo: "images/megane.jpg",
-        wishlist: []
+        wishlist: [
+            "Degustation de vin <br><small style='opacity:0.6'>La villageoise ça marche</small>",
+            "Bon cadeau chez Ynes lashe <br><small style='opacity:0.6'>Moi non plus je connais pas</small>",
+            "Un foulard de chez Vic et Zag, <br><small style='opacity:0.6'>Les petits commerçant c'est bien</small>",
+            "Soins visage - Les secrets de Laura,<br><small style='opacity:0.6'>Plus très secret</small>",
+            "Legging marron de chez BYS<br><small style='opacity:0.6'>En taille XL pour 3x plus de plaisir/small>",
+            "Verre à petit punch<br><small style='opacity:0.6'>Faudra pensez à inviter le père noël</small>",
+            "Bougie <br><small style='opacity:0.6'>Pas celle des voitures je suppose</small>",
+            "Veste de running deperlant H&M couleur ivoir / soleil<br><small style='opacity:0.6'>+ de précision pour moins de risque d'erreur</small>"
+        ]
     },
 
     "B3N7WF": {
@@ -65,7 +87,11 @@ const participants = {
         santa: "Tata",
         recipient: "Nathan",
         photo: "images/nathan.jpg",
-        wishlist: []
+        wishlist: [
+            "Du vin <br><small style='opacity:0.6'>Un bon français, pourquoi pas un pack fromage ?</small>",
+            "Du champagne ! <br><small style='opacity:0.6'>Vous allez peut-être avoir une annonce à féter ?</small>",
+            "Du chiffre d'affaire ? <br><small style='opacity:0.6'>Un vrai business-man</small>"
+        ]
     },
 
     "L2A8JQ": {
@@ -117,7 +143,7 @@ form.addEventListener("submit", function(event) {
     if (!participants[code]) {
 
         error.textContent =
-            "❌ Ce code n'est pas valide. Vérifie ton code et réessaie.";
+            "❌ Ce code n'est pas valide. Vérifie ton code et réessaie. Tata tu as voulu triché ?";
 
         input.classList.add("input-error");
 
@@ -209,7 +235,7 @@ function showPersonalPage(participant) {
             <div class="wishlist">
 
                 <h2 class="wishlist-title">
-                    🎁 Sa liste de souhaits
+                     Sa liste de souhaits
                 </h2>
 
                 ${createWishlist(
