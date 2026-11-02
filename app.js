@@ -17,15 +17,22 @@ const participants = {
 
     "K7F2X9": {
         santa: "Isabelle",
-        recipient: "Tata",
-        photo: "images/tata.jpg",
-        wishlist: []
+        recipient: "Brigitte",
+        photo: "images/brigitte.jpg",
+        wishlist: [
+            "Moule à tarte tatin pro, antiadhesif en inox<br><small style='opacity:0.6'>C'est précis attention</small>",
+            "Pochette porte monnaie<br><small style='opacity:0.6'>Pour le flouze qu'elle possède</small>",
+            "Jeu de société Pili-Pili et Speed bac<br><small style='opacity:0.6'>Plus de jeux pour plus de triche</small>",
+            "Savon de Groix Marcus à la criste marine<br><small style='opacity:0.6'>Pour sentir bon en tout circonstances</small>",
+            "Carafe à vin<br><small style='opacity:0.6'>ça aurait été choquant qu'on parle pas d'alcool</small>",
+            "Des livres mais on s'en fiche les cadeaux sont déja fait<br><small style='opacity:0.6'>Car Zaza est organisée</small>"
+        ]
     },
 
     "P4M8QA": {
         santa: "Marine",
-        recipient: "Tonton",
-        photo: "images/tonton.jpg",
+        recipient: "Jacques",
+        photo: "images/jacques.jpg",
         wishlist: [
             "Bières & vins<br><small style='opacity:0.6'>Étonnant, non ?</small>",
             "Pull en taille M ou L<br><small style='opacity:0.6'>Pour supporter le dur hiver du nord 🥶</small>",
@@ -50,20 +57,21 @@ const participants = {
     },
 
     "R6T2KP": {
-        santa: "Megane",
+        santa: "Meganne",
         recipient: "Marine",
         photo: "images/marine.jpg",
         wishlist: [
-            "La green card ou un mec riche americain <br><small style='opacity:0.6'>Qui vit à Orlando</small>",
-            
-            
+            "La green card ou un mec riche americain <br><small style='opacity:0.6'>Qui vit à Orlando, oui c'est important</small>",
+            "Lego « Le blason des maisons de Poudlard »<br><small style='opacity:0.6'>Poufsoufle un jour, poufsoufle toujours</small>",
+            "Livre Harry Potter and the goblet of fire version « Minalima » EN ANGLAIS <br><small style='opacity:0.6'>To be or not to be</small>",
+            "Kit haltères de musculation 20 kg avec disque de fonte en partie recyclée - Domyos Décathlon<br><small style='opacity:0.6'>Pour soulever Mickey</small>"
         ]
     },
 
     "V8Q5HD": {
         santa: "Nathan",
-        recipient: "Megane",
-        photo: "images/megane.jpg",
+        recipient: "Meganne",
+        photo: "images/meganne.jpg",
         wishlist: [
             "Degustation de vin <br><small style='opacity:0.6'>La villageoise ça marche</small>",
             "Bon cadeau chez Ynes lashe <br><small style='opacity:0.6'>Moi non plus je connais pas</small>",
@@ -80,11 +88,16 @@ const participants = {
         santa: "Suzanne",
         recipient: "Isabelle",
         photo: "images/isabelle.jpg",
-        wishlist: []
+        wishlist: [
+            "4 galettes chaises marque SunnyPillow velours anthracite<br><small style='opacity:0.6'>Moi la galette je préfére avec de la saucisse</small>",
+            "Livre Stephen king<br><small style='opacity:0.6'>Les manquants : Chambre 1408 / Plus noir que noir / Holly / Tout est fatal / Juste avant le crépuscule / Nuit noire, étoiles mortes</small>",
+            "Taille Haies Parkside (elle à déja la batterie)<br><small style='opacity:0.6'>Pour mieux voir la mer quand on ira prendre l'apéro</small>",
+            "Cadeau surprise, à votre imagination<br><small style='opacity:0.6'>Imagination = Dillon 55%</small>"
+        ]
     },
 
     "X5C9RM": {
-        santa: "Tata",
+        santa: "Brigitte",
         recipient: "Nathan",
         photo: "images/nathan.jpg",
         wishlist: [
@@ -95,10 +108,16 @@ const participants = {
     },
 
     "L2A8JQ": {
-        santa: "Tonton",
+        santa: "Jacques",
         recipient: "Morgan",
         photo: "images/morgan.jpg",
-        wishlist: []
+        wishlist: [
+            "Du gin <br><small style='opacity:0.6'>Et pas un Jean</small>",
+            "Dégustation de vin<br><small style='opacity:0.6'>La deuxième personne à mettre ça dans sa liste tiens</small>",
+            "Maillot Tommy Hifilghher ou lévis<br><small style='opacity:0.6'>Un homme de goût</small>",
+            "Pull",
+            "Montre <br><small style='opacity:0.6'>Une montre pour enfant ça passe</small>"
+        ]
     }
 
 };
