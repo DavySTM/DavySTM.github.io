@@ -63,7 +63,7 @@ const participants = {
         wishlist: [
             "La green card ou un mec riche americain <br><small style='opacity:0.6'>Qui vit à Orlando, oui c'est important</small>",
             "Lego « Le blason des maisons de Poudlard »<br><small style='opacity:0.6'>Poufsoufle un jour, poufsoufle toujours</small>",
-            "Livre Harry Potter and the goblet of fire version « Minalima » EN ANGLAIS <br><small style='opacity:0.6'>To be or not to be et pour pas se tromper : a href='https://www.amazon.fr/dp/1546154418' target='_blank'>Voir sur Amazon</a></small>",
+            "Livre Harry Potter and the goblet of fire version « Minalima » EN ANGLAIS <br><small style='opacity:0.6'>To be or not to be et pour pas se tromper : <a href='https://www.amazon.fr/dp/1546154418' target='_blank'>Voir sur Amazon</a></small>",
             "Kit haltères de musculation 20 kg avec disque de fonte en partie recyclée - Domyos Décathlon<br><small style='opacity:0.6'>Pour soulever Mickey</small>"
         ]
     },
