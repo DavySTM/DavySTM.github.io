@@ -27,9 +27,9 @@ const participants = {
         recipient: "Tonton",
         photo: "images/tonton.jpg",
         wishlist: [
-            "Bières & vins. Etonnant non ?",
-            "Pull pour support l'hiver du nord un peu dur. En taille M ou L",
-            "Carte cadeau Leroy Merlin ou Castorama, pour faire plein de travaux !"
+            "Bières & vins<br><small style='opacity:0.6'>Étonnant, non ?</small>",
+            "Un pull pour l'hiver du nord<br><small style='opacity:0.6'>Taille M ou L</small>",
+            "Carte cadeau Leroy Merlin ou Castorama<br><small style='opacity:0.6'>Pour faire plein de travaux !</small>"
         ]
     },
 
