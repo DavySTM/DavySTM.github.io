@@ -51,7 +51,7 @@ const participants = {
             "Poudre Laura Mercier couleur Translucent <br><small style='opacity:0.6'>Ah quand même</small>",
             "Carte cadeau Sephora<br><small style='opacity:0.6'>Simple mais efficace</small>",
             "Masque Olaplex 4 en 1<br><small style='opacity:0.6'>C'est de la torture non ? Bon courage</small>",
-            "Echarpe & Gant qui vont ensemble<br><small style='opacity:0.6'>Truc drôle accepter tant que c'est raccord/small>",
+            "Echarpe & Gant qui vont ensemble<br><small style='opacity:0.6'>Truc drôle accepter tant que c'est raccord</small>",
             "Masque Kerasta Genesis <br><small style='opacity:0.6'>C'est fini après promis Morgan</small>"
         ]
     },
@@ -77,7 +77,7 @@ const participants = {
             "Bon cadeau chez Ynes lashe <br><small style='opacity:0.6'>Moi non plus je connais pas</small>",
             "Un foulard de chez Vic et Zag, <br><small style='opacity:0.6'>Les petits commerçant c'est bien</small>",
             "Soins visage - Les secrets de Laura,<br><small style='opacity:0.6'>Plus très secret</small>",
-            "Legging marron de chez BYS<br><small style='opacity:0.6'>En taille XL pour 3x plus de plaisir/small>",
+            "Legging marron de chez BYS<br><small style='opacity:0.6'>En taille XL pour 3x plus de plaisir</small>",
             "Verre à petit punch<br><small style='opacity:0.6'>Faudra pensez à inviter le père noël</small>",
             "Bougie <br><small style='opacity:0.6'>Pas celle des voitures je suppose</small>",
             "Veste de running deperlant H&M couleur ivoir / soleil<br><small style='opacity:0.6'>+ de précision pour moins de risque d'erreur</small>"
