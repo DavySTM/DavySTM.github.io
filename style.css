@@ -812,5 +812,8 @@ footer {
         transform: translateX(7px);
     }
 }
-
+.wishlist li a {
+    color: var(--gold);
+    text-decoration: underline;
+}
 }
