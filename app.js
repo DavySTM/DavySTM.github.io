@@ -26,7 +26,11 @@ const participants = {
         santa: "Marine",
         recipient: "Tonton",
         photo: "images/tonton.jpg",
-        wishlist: []
+        wishlist: [
+            "Bières & vins. Etonnant non ?",
+            "Pull pour support l'hiver du nord un peu dur. En taille M ou L",
+            "Carte cadeau Leroy Merlin ou Castorama, pour faire plein de travaux !"
+        ]
     },
 
     "Z91L3C": {
