@@ -28,7 +28,7 @@ const participants = {
         photo: "images/tonton.jpg",
         wishlist: [
             "Bières & vins<br><small style='opacity:0.6'>Étonnant, non ?</small>",
-            "Un pull pour l'hiver du nord<br><small style='opacity:0.6'>Taille M ou L</small>",
+            "Pull en taille M ou Lbr><small style='opacity:0.6'>Pour supporter le dur hiver du nord 🥶</small>",
             "Carte cadeau Leroy Merlin ou Castorama<br><small style='opacity:0.6'>Pour faire plein de travaux !</small>"
         ]
     },
