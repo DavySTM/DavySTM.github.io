@@ -18,7 +18,7 @@ const participants = {
     "K7F2X9": {
         santa: "Isabelle",
         recipient: "Brigitte",
-        photo: "images/brigitte.jpg",
+        photo: "images/brigitte.PNG",
         wishlist: [
             "Moule à tarte tatin pro, antiadhesif en inox<br><small style='opacity:0.6'>C'est précis attention</small>",
             "Pochette porte monnaie<br><small style='opacity:0.6'>Pour le flouze qu'elle possède</small>",
@@ -32,7 +32,7 @@ const participants = {
     "P4M8QA": {
         santa: "Marine",
         recipient: "Jacques",
-        photo: "images/jacques.jpg",
+        photo: "images/jacques.PNG",
         wishlist: [
             "Bières & vins<br><small style='opacity:0.6'>Étonnant, non ?</small>",
             "Pull en taille M ou L<br><small style='opacity:0.6'>Pour supporter le dur hiver du nord 🥶</small>",
@@ -43,7 +43,7 @@ const participants = {
     "Z91L3C": {
         santa: "Morgan",
         recipient: "Suzanne",
-        photo: "images/suzanne.jpg",
+        photo: "images/suzanne.PNG",
         wishlist: [
             "Carte cadeau surprise malo<br><small style='opacity:0.6'>Du petit commerce, on ADOOOREEE</small>",
             "Livre beauté fatale de Mona Chollet<br><small style='opacity:0.6'>Il faut souffrir pour être belle</small>",
@@ -59,7 +59,7 @@ const participants = {
     "R6T2KP": {
         santa: "Meganne",
         recipient: "Marine",
-        photo: "images/marine.jpg",
+        photo: "images/marine.PNG",
         wishlist: [
             "La green card ou un mec riche americain <br><small style='opacity:0.6'>Qui vit à Orlando, oui c'est important</small>",
             "Lego « Le blason des maisons de Poudlard »<br><small style='opacity:0.6'>Poufsoufle un jour, poufsoufle toujours</small>",
@@ -71,7 +71,7 @@ const participants = {
     "V8Q5HD": {
         santa: "Nathan",
         recipient: "Meganne",
-        photo: "images/meganne.jpg",
+        photo: "images/meganne.PNG",
         wishlist: [
             "Degustation de vin <br><small style='opacity:0.6'>La villageoise ça marche</small>",
             "Bon cadeau chez Ynes lashe <br><small style='opacity:0.6'>Moi non plus je connais pas</small>",
@@ -87,7 +87,7 @@ const participants = {
     "B3N7WF": {
         santa: "Suzanne",
         recipient: "Isabelle",
-        photo: "images/isabelle.jpg",
+        photo: "images/isabelle.PNG",
         wishlist: [
             "4 galettes chaises marque SunnyPillow velours anthracite<br><small style='opacity:0.6'>Moi la galette je préfére avec de la saucisse</small>",
             "Livre Stephen king<br><small style='opacity:0.6'>Les manquants : Chambre 1408 / Plus noir que noir / Holly / Tout est fatal / Juste avant le crépuscule / Nuit noire, étoiles mortes</small>",
@@ -99,7 +99,7 @@ const participants = {
     "X5C9RM": {
         santa: "Brigitte",
         recipient: "Nathan",
-        photo: "images/nathan.jpg",
+        photo: "images/nathan.PNG",
         wishlist: [
             "Du vin <br><small style='opacity:0.6'>Un bon français, pourquoi pas un pack fromage ?</small>",
             "Du champagne ! <br><small style='opacity:0.6'>Vous allez peut-être avoir une annonce à féter ?</small>",
@@ -110,7 +110,7 @@ const participants = {
     "L2A8JQ": {
         santa: "Jacques",
         recipient: "Morgan",
-        photo: "images/morgan.jpg",
+        photo: "images/morgan.PNG",
         wishlist: [
             "Du gin <br><small style='opacity:0.6'>Et pas un Jean</small>",
             "Dégustation de vin<br><small style='opacity:0.6'>La deuxième personne à mettre ça dans sa liste tiens</small>",
