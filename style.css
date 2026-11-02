@@ -713,6 +713,8 @@ footer {
         padding: 20px 15px;
     }
 
+}
+
     /* =========================================
    CHAMP CODE SECRET
 ========================================= */
@@ -812,8 +814,17 @@ footer {
         transform: translateX(7px);
     }
 }
+
+
+/* =========================================
+   LIENS DANS LA WISHLIST
+========================================= */
+
 .wishlist li a {
     color: var(--gold);
     text-decoration: underline;
 }
+
+.wishlist li a:hover {
+    color: white;
 }
